@@ -71,8 +71,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
             
             jTextFieldID.setText(jTable1.getValueAt(jTable1.getSelectedRow(), 0).toString());
-            jTextFieldDescricao.setText(jTable1.getValueAt(jTable1.getSelectedRow(), 1).toString());
-            jTextFieldEndereco.setText(jTable1.getValueAt(jTable1.getSelectedRow(), 2).toString());
+            jTextAreaDescricao.setText(jTable1.getValueAt(jTable1.getSelectedRow(), 1).toString());
+            jTextAreaEndereco.setText(jTable1.getValueAt(jTable1.getSelectedRow(), 2).toString());
             jTextFieldValor.setText(jTable1.getValueAt(jTable1.getSelectedRow(), 3).toString());
         }
     }
@@ -81,8 +81,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
 	filtro = false;
 	jLabelFiltro.setVisible(false);
         jTextFieldID.setText("");
-        jTextFieldDescricao.setText("");
-        jTextFieldEndereco.setText("");
+        jTextAreaDescricao.setText("");
+        jTextAreaEndereco.setText("");
         jTextFieldValor.setText("R$ 0,00");
         try {
             listar(projetoControle.listar());
@@ -114,6 +114,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextAreaDescricao = new javax.swing.JTextArea();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jPanel1 = new javax.swing.JPanel();
@@ -121,9 +123,7 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jTextFieldID = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextFieldDescricao = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextFieldEndereco = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jTextFieldValor = new javax.swing.JTextField();
         jButtonIncluir = new javax.swing.JButton();
@@ -131,6 +131,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jButtonExcluir = new javax.swing.JButton();
         jButtonConsultar = new javax.swing.JButton();
         jLabelFiltro = new javax.swing.JLabel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jTextAreaEndereco = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         addMouseListener(new java.awt.event.MouseAdapter() {
@@ -138,6 +140,14 @@ public class TelaPrincipal extends javax.swing.JFrame {
                 formMouseClicked(evt);
             }
         });
+
+        jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+
+        jTextAreaDescricao.setColumns(20);
+        jTextAreaDescricao.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        jTextAreaDescricao.setLineWrap(true);
+        jTextAreaDescricao.setRows(3);
+        jScrollPane2.setViewportView(jTextAreaDescricao);
 
         jScrollPane1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -202,12 +212,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel3.setText("Descrição:");
 
-        jTextFieldDescricao.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-
         jLabel4.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel4.setText("Endereço:");
-
-        jTextFieldEndereco.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel5.setText("Valor do Projeto:");
@@ -263,90 +269,94 @@ public class TelaPrincipal extends javax.swing.JFrame {
         jLabelFiltro.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabelFiltro.setText("Tabela Filtrada");
 
+        jTextAreaEndereco.setColumns(20);
+        jTextAreaEndereco.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
+        jTextAreaEndereco.setLineWrap(true);
+        jTextAreaEndereco.setRows(3);
+        jScrollPane3.setViewportView(jTextAreaEndereco);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1)
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
                 .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel5)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5)
+                            .addComponent(jTextFieldValor, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextFieldEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 25, Short.MAX_VALUE)
-                                .addComponent(jButtonConsultar, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jTextFieldDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addComponent(jLabel3)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jTextFieldID, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel2))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButtonIncluir, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                                .addGap(25, 25, 25)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jButtonAlterar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jButtonExcluir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextFieldID, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButtonIncluir, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jButtonExcluir, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jButtonConsultar, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(16, 16, 16))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel2)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTextFieldValor, javax.swing.GroupLayout.PREFERRED_SIZE, 198, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabelFiltro)))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(jLabel4)
+                        .addContainerGap(487, Short.MAX_VALUE))))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1)
-                .addContainerGap())
+                .addGap(250, 250, 250)
+                .addComponent(jLabelFiltro)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(44, 44, 44)
-                .addComponent(jLabel2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextFieldID, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonIncluir))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextFieldDescricao, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel4))
-                    .addGroup(layout.createSequentialGroup()
+                        .addGap(75, 75, 75)
+                        .addComponent(jButtonIncluir)
                         .addGap(25, 25, 25)
                         .addComponent(jButtonAlterar)
                         .addGap(26, 26, 26)
-                        .addComponent(jButtonExcluir)))
+                        .addComponent(jButtonExcluir))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldID, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel4)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextFieldEndereco, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButtonConsultar))
+                    .addComponent(jButtonConsultar)
+                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel5)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextFieldValor, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 262, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(33, 33, 33)
-                        .addComponent(jLabelFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextFieldValor, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabelFiltro, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -356,8 +366,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             Projetos projeto = new Projetos();
-            projeto.setDescricao(jTextFieldDescricao.getText());
-            projeto.setEndereco(jTextFieldEndereco.getText());
+            projeto.setDescricao(jTextAreaDescricao.getText());
+            projeto.setEndereco(jTextAreaEndereco.getText());
             projeto.setValorDoProjeto(Numero.numeros(jTextFieldValor.getText()));
             projetoControle.incluir(projeto);
             JOptionPane.showMessageDialog(null, "Incluido!");
@@ -377,8 +387,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         try {
             Projetos projeto = new Projetos();
             projeto.setId(Integer.parseInt(jTextFieldID.getText()));
-            projeto.setDescricao(jTextFieldDescricao.getText());
-            projeto.setEndereco(jTextFieldEndereco.getText());
+            projeto.setDescricao(jTextAreaDescricao.getText());
+            projeto.setEndereco(jTextAreaEndereco.getText());
             projeto.setValorDoProjeto(Numero.numeros(jTextFieldValor.getText()));
             projetoControle.alterar(projeto);
             JOptionPane.showMessageDialog(null, "Alterado!");
@@ -404,23 +414,32 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private void jButtonConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConsultarActionPerformed
         // TODO add your handling code here:
         try {
-            Projetos projeto = new Projetos();
-            if(jTextFieldID.getText().equals("")) projeto.setId(0);
-            else projeto.setId(Integer.parseInt(jTextFieldID.getText()));
-            projeto.setDescricao(jTextFieldDescricao.getText());
-            projeto.setEndereco(jTextFieldEndereco.getText());
-            projeto.setValorDoProjeto(Numero.numeros(jTextFieldValor.getText()));
-            Lista<Projetos> lista = projetoControle.filtrar(projeto);
-            if(lista.getTamanho() == 1){
-                acharProjetoNaTabela(lista.get(0).getId());
-                
-            }else{
-                if(lista.getTamanho() > 1){
-                    listar(lista);
-                    filtro = true;
-                    jLabelFiltro.setVisible(true);
+            String id = jTextFieldID.getText();
+            String descricao = jTextAreaDescricao.getText();
+            String endereco = jTextAreaEndereco.getText();
+            String valorDoProjeto = Numero.numeros(jTextFieldValor.getText()) + "";
+            
+            if(!id.equals("") || !descricao.equals("") || !endereco.equals("") || !valorDoProjeto.equals("0.0")){
+                Projetos projeto = new Projetos();
+                if(id.equals("")) projeto.setId(0);
+                else projeto.setId(Integer.parseInt(id));
+                projeto.setDescricao(descricao);
+                projeto.setEndereco(endereco);
+                projeto.setValorDoProjeto(Numero.numeros(valorDoProjeto));
+                Lista<Projetos> lista = projetoControle.filtrar(projeto);
+                if(lista.getTamanho() == 0) JOptionPane.showMessageDialog(null, "Não existe nenhum projeto com as características informadas!");
+                if(lista.getTamanho() == 1){
+                    acharProjetoNaTabela(lista.get(0).getId());
+
+                }else{
+                    if(lista.getTamanho() > 1){
+                        listar(lista);
+                        filtro = true;
+                        jLabelFiltro.setVisible(true);
+                    }
                 }
             }
+            
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -495,9 +514,11 @@ public class TelaPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabelFiltro;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextFieldDescricao;
-    private javax.swing.JTextField jTextFieldEndereco;
+    private javax.swing.JTextArea jTextAreaDescricao;
+    private javax.swing.JTextArea jTextAreaEndereco;
     private javax.swing.JTextField jTextFieldID;
     private javax.swing.JTextField jTextFieldValor;
     // End of variables declaration//GEN-END:variables

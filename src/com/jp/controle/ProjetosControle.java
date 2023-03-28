@@ -23,7 +23,15 @@ public class ProjetosControle implements IProjetosControle {
     
     @Override
     public void incluir(Projetos projeto) throws Exception {
+        
         projetoPersistencia.incluir(projeto);
+    }
+    
+    private boolean estaVazio(Projetos projeto){
+        if(projeto.getDescricao().equals("")) return true;
+        if(projeto.getEndereco().equals("")) return true;
+        
+        return false;
     }
 
     @Override
